@@ -1,0 +1,49 @@
+﻿@page
+@model DeskBooker.Web.BookDeskModel
+
+@{
+    ViewData["Title"] = "BookDesk";
+}
+
+<h1>BookDesk</h1>
+
+<h4>DeskBookingRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DeskBookingRequest.FirstName" class="control-label"></label>
+                <input asp-for="DeskBookingRequest.FirstName" class="form-control" />
+                <span asp-validation-for="DeskBookingRequest.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskBookingRequest.LastName" class="control-label"></label>
+                <input asp-for="DeskBookingRequest.LastName" class="form-control" />
+                <span asp-validation-for="DeskBookingRequest.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskBookingRequest.Email" class="control-label"></label>
+                <input asp-for="DeskBookingRequest.Email" class="form-control" />
+                <span asp-validation-for="DeskBookingRequest.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskBookingRequest.Date" class="control-label"></label>
+                <input asp-for="DeskBookingRequest.Date" class="form-control" />
+                <span asp-validation-for="DeskBookingRequest.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
